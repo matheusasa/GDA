@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;xml&apos; to &apos;js&apos;&#x0A;- Original project: &apos;GDA&apos;&#x0A;- Destination element: &apos;js&apos;&#x0A;- Original element: &apos;xml&apos;" description="Copy folder" element1="wcm/widget/FormESN/src/main/webapp/resources/js/xml" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1705689909623" target="/GDA/wcm/widget/Portal_GDA/src/main/webapp/resources/js" units="0" version="1.0"/>
+</session>

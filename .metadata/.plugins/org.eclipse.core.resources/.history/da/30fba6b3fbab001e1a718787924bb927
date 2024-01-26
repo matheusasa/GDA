@@ -1,0 +1,435 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+    <div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide"
+        data-params="MyWidget.instance()">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!--<title>Registration Form in HTML CSS</title>-->
+        <!---Custom CSS File--->
+        <link rel="stylesheet" href="style.css" />
+        <style>
+        /* Import Google font - Poppins */
+        html {
+            --main-color: #2F5597;
+            --second-bg-color: #323946;
+            --white: #fff;
+            font-size: 14px;
+            font-family: "Andale Mono
+
+        }
+
+        * {
+            outline: none;
+            box-sizing: border-box;
+            margin: 0;
+            outline: 0;
+        }
+
+        .panel-heading {
+            font-size: 150%;
+        }
+
+        h11 {
+            color: red;
+        }
+
+        .brief {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /*CODIGO DO TESTE*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgb(238, 23, 91);
+            background: linear-gradient(90deg, rgba(238, 23, 91, 1) 31%, rgba(255, 157, 0, 1) 100%);
+        }
+
+        .container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container header {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .container .form {
+            margin-top: 30px;
+        }
+
+        .form .input-box {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .input-box label {
+            color: #333;
+        }
+
+        .form :where(.input-box input, .select-box) {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 6px;
+            padding: 0 0;
+        }
+
+        .input-box input:focus {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .form .column {
+            display: flex;
+            column-gap: 15px;
+        }
+
+        .form .mod-box {
+            margin-top: 20px;
+        }
+
+        .mod-box h3 {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .form :where(.mod-option, .mod) {
+            display: flex;
+            align-items: center;
+            column-gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .form .mod {
+            column-gap: 5px;
+        }
+
+        .mod input {
+            accent-color: #FB0058;
+        }
+
+        .form :where(.mod input, .mod label) {
+            cursor: pointer;
+        }
+
+        .mod label {
+            color: #707070;
+        }
+
+        .select-box select {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .enviar {
+            height: 55px;
+            width: 100%;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #FB0058;
+        }
+
+        .enviar:hover {
+            background: #D5004B;
+        }
+
+        .agoravaimano {
+            height: fit-content;
+            width: fit-content;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 55px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lupa:hover {
+            background: #D5004B;
+        }
+
+        /*Responsive*/
+        @media screen and (max-width: 500px) {
+            .form .column {
+                flex-wrap: wrap;
+            }
+
+            .form :where(.mod-option, .mod) {
+                row-gap: 15px;
+            }
+        }
+
+        .cadastro,
+        .clienteProspect {
+            display: flex;
+            box-sizing: border-box;
+        }
+
+        .clienteProspect {
+            margin: 20px;
+            margin-bottom: 20px;
+        }
+        </style>
+
+        <body>
+            <form role="form">
+                <section class="container cadastro">
+                <img src="/resources/images/logo.png" alt="Logo Totvs" style="height: 32px; width: 150px; position:absolute;left:20px">
+                <header style="position:relative;">Solicitante</header>
+                <div class="form">
+                    <div class="column">
+                        <div class="input-box">
+                            <label><i class="flaticon flaticon-order icon-sm" aria-hidden="true"></i>Categoria</label>
+                            <div class="column">
+                                <div class="select-box">
+                                    <select required="" id="ctgs" name="ctgs" class="form-control"
+                                        style="height: 100%">
+                                        <option hidden value="">Selecione sua Categoria</option>
+                                        <option value ="Apps" required> APPS</option>
+                                        <option value ="AutoCom" required> AUTOMAÇÃO COMERCIAL</option>
+                                        <option value ="ComExt" required> COMÉRCIO EXTERIOR</option>
+                                        <option value ="Conc" required> CONCESSIONÁRIAS</option>
+                                        <option value ="Cont" required> CONTROLADORIA</option>
+                                        <option value ="CRM" required> CRM</option>
+                                        <option value ="Dis" required> DIST. E LOGISTICA</option>
+                                        <option value ="Edu" required> EDUCACIONAL</option>
+                                        <option value ="Fluig" required> FLUIG</option>
+                                        <option value ="Man" required> MANUFATURA</option>
+                                        <option value ="Mat" required> MATERIAIS E PRODUÇÃO</option>
+                                        <option value ="Pai" required> PAINÉIS</option>
+                                        <option value ="Rec" required> RECURSOS HUMANOS</option>
+                                        <option value ="Ren" required> RENTAL</option>
+                                        <option value ="Sau" required> SAÚDE </option>
+                                        <option value ="Ser" required> SERVIÇOS</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label><i class="flaticon flaticon-toc icon-sm" aria-hidden="true"></i>SubCategoria</label>
+                            <div class="column">
+                                <div class="select-box">
+                                    <select required="" id="sctgs" name="sctgs" class="form-control"
+                                        style="height: 100%">
+                                        <option hidden value="">Selecione sua Sub Categoria</option>
+                                        <option value="MP">MEU PROTHEUS</option>
+                                        <option value="MCol">MEUS COLETOR </option>
+                                        <option value="MCon">MEUS CONTRATOS</option>
+                                        <option value="MPro">MINHA PRODUÇÃO</option>
+                                        <option value="MOrd">MINHAS ORDENS DE SERVIÇO</option>
+                                        <option value="MSal">MOBSALES (APP DE VENDAS TSM)</option>
+                                        <option value="CDL">CONTROLE DE LOJA (SIGALOJA)</option>
+                                        <option value="FAC">FIDELIZAÇÃO E ANALISE DE CREDITO</option>
+                                        <option value="FL">FRONT LOJA( FLJ)</option>
+                                        <option value="CDI">CONTABILIDADE DE IMPORTAÇÕES</option>
+                                        <option value="DB">DRAWBACK</option>
+                                        <option value="EX">EXPORTAÇÃO</option>
+                                        <option value="FDI">FINANCIAMENTO DE IMPORTAÇÃO</option>
+                                        <option value="Imp">IMPORTAÇÃO</option>
+                                        <option value="Ofi">OFICCINAS</option>
+                                        <option value="Pec">PEÇAS</option>
+                                        <option value="Vei">VEÍCULOS</option>
+                                        <option value="AF">CONTÁBIL/FISCAL > ATIVO FIXO</option>
+                                        <option value="CG">CONTÁBIL/FISCAL > CONTABILIDADE GERENCIAL</option>
+                                        <option value="LF">CONTÁBIL/FISCAL > FISCAL (LIVROS FISCAIS)</option>
+                                        <option value="PCO">CONTÁBIL/FISCAL > PLANEJAMENTO E CONTROLE ORÇAMENTÁRIO</option>
+                                        <option value="CNAB">FINACEIRO > CNAB</option>
+                                        <option value="CAP">FINACEIRO > CONTAS A PAGAR</option>
+                                        <option value="CAR">FINACEIRO > CONTAS A RECEBER</option>
+                                        <option value="MB">FINANCEIRO > MOVIMENTAÇÃO BANCÁRIA</option>
+                                        <option value="SPEDC">SPED CONTABIL</option>
+                                        <option value="SPEDF">SPED FISCAL</option>
+                                        <option value="SPEDN">SPED NF-E</option>
+                                        <option value="TMKCRM">CRM PROHTEUS (TMK,CRM)</option>
+                                        <option value="MCRM">MASTER CRM</option>
+                                        <option value="MS">MASTER SALES</option>
+                                        <option value="WMS">GESTÃO DE ARMAZENAGEM - WMS</option>
+                                        <option value="OMS">GESTÃO DE DISTRIBUIÇÃO - OMS</option>
+                                        <option value="GFE">GESTÃO DE FRETE EMBARCADOR - GFE</option>
+                                        <option value="TMS">GESTÃO DE TRANSPORTE - TMS</option>
+                                        <option value="GA">GESTÃO ACERVOS</option>
+                                        <option value="GE">GESTÃO EDUCACIONAL</option>
+                                        <option value="Ana">ANALYTICS </option>
+                                        <option value="BPM">BPM </option>
+                                        <option value="GED">GED</option>
+                                        <option value="Lea">LEARNING</option>
+                                        <option value="WCM">WCM</option>
+                                        <option value="Aps">APS</option>
+                                        <option value="CDF">CHÃO DE FÁBRICA</option>
+                                        <option value="CDP">CONFIG. DE PRODUTOS</option>
+                                        <option value="DDProdutos">DESENVOLVEDOR DE PRODUTOS</option>
+                                        <option value="MES">TOTVS M.E.S.</option>
+                                        <option value="Com">COMPRAS</option>
+                                        <option value="CDC">CONTROLE DE CUSTOS</option>
+                                        <option value="CDProducao">CONTROLE DE PRODUÇÃO</option>
+                                        <option value="EC">ESTOQUE/CUSTOS</option>
+                                        <option value="FAT">FATURAMENTO</option>
+                                        <option value="GAG">GESTÃO AGRICOLA/GRÃOS</option>
+                                        <option value="GDC">GESTÃO DE CONTRATOS</option>
+                                        <option value="MNT">MANUTENÇÃO DE ATIVOS (MNT)</option>
+                                        <option value="MDF">MANUTENÇÃO DE FORTA</option>
+                                        <option value="PCP">PLANEJAMENTO E CONTROLE DE PRODUÇÃO - PCP</option>
+                                        <option value="CP">CAROL PLATAFORMA</option>
+                                        <option value="PC">PAINEL CONTABIL</option>
+                                        <option value="PF">PAINEL FINANCEIRO</option>
+                                        <option value="AppRH">APP MEU R.H./CLOCK-IN</option>
+                                        <option value="APM">APP PERFORMANCE E METAS</option>
+                                        <option value="APD">AVALIAÇÃO E PESQUISA DE DESEMPENHO</option>
+                                        <option value="CS">CARGOS E SALARIOS</option>
+                                        <option value="GP">GESTÃO PESSOAL</option>
+                                        <option value="PE">PONTO ELETRONICO</option>
+                                        <option value="PT">PROCESSOS TRABALHISTAS</option>
+                                        <option value="RSP">RECRUTAMENTO E SELEÇÃO DE PESSOAL</option>
+                                        <option value="T">TRAINAMENTO</option>
+                                        <option value="G">GESTÃO HOSPITALAR</option>
+                                        <option value="GS">G.S. + LOCAÇÃO DE EQUIPAMENTOS</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-box">
+                            <label><i class="flaticon flaticon-card-user icon-sm" aria-hidden="true"></i> ARQ</label>
+                            <input type="text" placeholder="Seu nome aqui" required id="arq" name="arq" />
+                        </div>
+                        <div class="input-box">
+                            <label><i class="flaticon flaticon-email icon-sm" aria-hidden="true"></i>
+                                E-mail</label>
+                            <input type="text" placeholder="seuemail@totvs.com.br" required id="email" name="email" />
+                        </div>
+                        <div class="mod-box">
+                            <label style="font-weight: bold;"><i class="fluigicon fluigicon-query-objective icon-sm" aria-hidden="true"></i>
+                                Modalidade</label>
+                            <div class="mod-option">
+                                <div class="mod">
+                                    <input type="radio" id="mod" name="mod" required value="presencial" />
+                                    <label for="presencial" style="pointer-events: none; ">Presencial</label>
+                                </div>
+                                <div class="mod">
+                                    <input type="radio" id="mod" name="mod" required value="online" />
+                                    <label for="online" style="pointer-events: none;">Online</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                <section class="container clienteProspect">
+                    <header>Cliente/Prospect</header>
+                    <div class="form">
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-email icon-sm" aria-hidden="true"></i> Email: </label>
+                                <input type="text" placeholder="Seu nome aqui" id="emailClient" name="emailClient" placeholder="email@email.com"
+                                    type="text" pattern="[a-z0-9._%+-]
++@[a-z0-9.-]
++\.[a-z]
+{2,4}$" required="" />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="fluigicon fluigicon-search-test icon-sm" aria-hidden="true"></i> CNPJ: </label>
+                                <input id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required=""
+                                    type="text" maxlength="18" pattern="\[0-9]
+{2}\ [0-9]
+{4,6}-[0-9]
+{3,4}$"
+                                    OnKeyPress="formatar('##.###.###/####-##', this)" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="fluigicon fluigicon-group-school-note icon-sm" aria-hidden="true"></i> Cargo: </label>
+                                <input id="cargo" name="cargo" placeholder="Ex: Executivo" type="text"
+                                    required />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-contact-phone icon-sm" aria-hidden="true"></i> WhatsApp: </label>
+                                <input id="wpp" name="wpp" placeholder="XX XXXXX-XXXX" required=""
+                                    type="text" maxlength="13" pattern="\[0-9]
+{2}\ [0-9]
+{4,6}-[0-9]
+{3,4}$"
+                                    OnKeyPress="formatar('## #####-####', this)" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-assignment-ind icon-sm" aria-hidden="true"></i> Razão Social: </label>
+                                <input id="razao" name="razao" type="text" required="" placeholder="Ex: Totvs" />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-supervisor-account icon-sm" aria-hidden="true"></i> Pessoa de Contato:</label>
+                                <input id="contato" name="contato" type="text" required="" placeholder="Ex: Dennis" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-assignment icon-sm" aria-hidden="true"></i> Briefing</label>
+                                <textarea class="form-control no-resize" name="briefing" id="brinfing" rows="8" maxlength="4000"
+                                    required=""></textarea>
+                            </div>
+                        </div>
+                        <button type="button" class="enviar" onClick="criaRegistro()" style="font-size:1rem; font-family: sans serif; height: 55px;
+    width: 98%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #FB0058;">Enviar</button>
+                    </div>
+                </section>
+                <script>
+                $("#tablesconder").hide();
+
+                function formatar(mascara, documento) {
+                    var i = documento.value.length;
+                    var saida = mascara.substring(0, 1);
+                    var texto = mascara.substring(i);
+                    if (texto.substring(0, 1) != saida) {
+                        documento.value += texto.substring(0, 1);
+                    }
+                }
+                </script>
+            </form>
+        </body>
+    </div>
+</div>

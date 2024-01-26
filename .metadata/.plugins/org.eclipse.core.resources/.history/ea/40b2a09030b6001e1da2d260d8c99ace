@@ -1,0 +1,64 @@
+var MyWidget = SuperWidget.extend({
+    //variáveis da widget
+    variavelNumerica: null,
+    variavelCaracter: null,
+
+    //método iniciado quando a widget é carregada
+    init: function() {
+    },
+  
+    //BIND de eventos
+    bindings: {
+        local: {
+            'execute': ['click_executeAction']
+        },
+        global: {}
+    },
+ 
+    executeAction: function(htmlElement, event) {
+    }
+
+});
+
+
+function trocafunc(){
+    var evento = document.getElementById('status').value;
+    var faltaConvidado = document.getElementById('FC');
+    if(evento == "faltaC" || "faltaA" ) {
+        faltaConvidado.style.display = "block";
+    }
+}
+var stars = 
+    document.getElementsByClassName("star");
+var output = 
+    document.getElementById("output");
+ 
+// Funtion to update rating
+function gfg(n) {
+    remove();
+    for (var i = 0; i < n; i++) {
+        if (n == 1) cls = "one";
+        else if (n == 2) cls = "two";
+        else if (n == 3) cls = "three";
+        else if (n == 4) cls = "four";
+        else if (n == 5) cls = "five";
+        stars[i].className = "star " + cls;
+    }
+    output.innerText = "Rating is: " + n + "/5";
+}
+ 
+// To remove the pre-applied styling
+function remove() {
+    vars i = 0;
+    while (i < 5) {
+        stars[i].className = "star";
+        i++;
+    }
+}
+function editareg(){
+    var status;
+    var mod;
+    var comentarios;
+
+
+}

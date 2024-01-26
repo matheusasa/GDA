@@ -1,0 +1,257 @@
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+    <style>
+        body {
+            background-color: #A9A9A9;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Painel de dados Anfitrião -->
+    <div class="fluig-style-guide">
+        <form name="form" role="form">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        <i class="fluigicon fluigicon-calendar-top-right icon-md" aria-hidden="true"></i>
+                        Dados do Anfitrião
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="solicit">Solicitante:</label>
+                            <input type="text" id="solicit" name="solicit" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="solicit">Data do evento</label>
+                            <input type="text" id="diaehora" name="diaehora" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="nome">Nome:</label>
+                            <input type="text" name="nome" id="nome" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="email">E-mail:</label>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Unidade:</label>
+                            <input name="segmentos" id="segmentos" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Modalidade:</label>
+                            <input name="modalidade" id="modalidade" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Segmentos:</label>
+                            <input name="segmentosL2" id="segmentosL2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Painel de dados Anfitrião -->
+
+            <!-- Painel de dados Cliente/Prospect -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="flaticon flaticon-group-person icon-md" aria-hidden="true"></i>Cliente/Prospect
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="form-group col-md-3">
+                            <label for="emailClient">E-mail:</label>
+                            <input type="email" name="emailClient" id="emailClient" class="form-control" required
+                                placeholder="email@example.com">
+                        </div>
+
+
+
+                        <div class="form-group col-md-3">
+                            <label for="CNPJ">CNPJ:</label>
+                            <input type="text" name="cnpj" id="cnpj" class="form-control" required
+                                placeholder="XX. XXX. XXX/0001-XX.">
+                        </div>
+
+
+                        <div class="form-group col-md-3">
+                            <label for="cargo">Cargo:</label>
+                            <input type="text" name="cargo" id="cargo" class="form-control" required
+                                placeholder="Ex: Executivo.">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="wpp">Número de WhatsApp:</label>
+                            <input type="tel" name="wpp" id="wpp" class="form-control" required
+                                placeholder="(XX) XXXXX-XXXX.">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="razao">Razao Social:</label>
+                            <input type="text" name="razao" id="razao" class="form-control"
+                                placeholder="Ex: Totvs Serra do Mar.">
+                        </div>
+                        <div class="form-group col-md-6" style="display: none;">
+                            <label for="notaIntClient">Tempo restante</label>
+                            <input type="text" name="temprest" id="temprest" class="form-control">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="contato">Pessoa de Contato:</label>
+                            <input type="text" name="contato" id="contato" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Briefing:</label>
+                        <textarea class="form-control no-resize" name="briefing" id="brienfing" rows="8"
+                            maxlength="4000"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Painel de dados Cliente/Prospect -->
+
+            <!-- Início do Painel Satisfação Solicitante -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="collapse-icon" data-toggle="collapse" data-parent="#accordion"
+                            href="#colap_Solicitante"><i class="flaticon flaticon-account-box icon-md"
+                                aria-hidden="true"></i>
+                            Solicitante TOTVS
+                        </a>
+                    </h3>
+                </div>
+                <div id="colap_Solicitante" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="statusEvento1">Status Evento:</label>
+                                <input type="text" name="statusevento" id="statusevento" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="porQualMotivo">Por qual motivo?</label>
+                                <input type="text" name="motivo" id="motivo" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="deseja">Deseja remarcar?</label>
+                                <input type="text" name="remarcar" id="remarcar" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="notaIntClient1">Nota para o interesse do Cliente/Prospect:</label>
+                                <input type="text" name="nota1solicit" id="nota1solicit" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Nota para o desempenho do Anfitrião:</label>
+                                <input name="nota2solicit" id="nota2solicit" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Comentario:</label>
+                                <input name="comentsolicit" id="comentsolicit" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Painel Satisfação Solicitante -->
+
+            <!-- Início do Painel Satisfação Anfitrião -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="collapse-icon" data-toggle="collapse" data-parent="#accordion"
+                            href="#colap_Anfitriao"><i class="flaticon flaticon-account-box icon-md"
+                                aria-hidden="true"></i>
+                            Anfitrião TOTVS
+                        </a>
+                    </h3>
+                </div>
+                <div id="colap_Anfitriao" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="notaIntClient">Nota para o interesse do Cliente/Prospect:</label>
+                                <input type="text" name="interesseClient" id="interesseClient" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="statusEvento">Nota do perfil do Cliente/Prospect para aderir TOTVS</label>
+                                <input type="text" name="notaPerfilClient" id="notaPerfilClient" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Comentario:</label>
+                                <input name="comentario" id="comentario" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Painel Satisfação Anfitrião -->
+
+            <!-- Início do Painel Satisfação Cliente -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a class="collapse-icon" data-toggle="collapse" data-parent="#accordion"
+                            href="#colap_Cliente"><i class="flaticon flaticon-account-box icon-md"
+                                aria-hidden="true"></i>
+                            Convidado
+                        </a>
+                    </h3>
+                </div>
+                <div id="colap_Cliente" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label>Email:</label>
+                                <input name="email1" id="email1" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Nota de avaliação do evento como um todo:</label>
+                                <input name="nota1" id="nota1" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="notaIntClient">Nota para medir o interesse no serviço TOTVS:</label>
+                                <input type="text" name="nota2" id="nota2" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Comentario:</label>
+                                <input name="comentario1" id="comentario1" class="form-control">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do Painel Satisfação Cliente -->
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<#import "/wcm.ftl" as wcm />
+
+
+
+<div><@wcm.renderSlot id="SlotC" editableSlot="true" decorator="true" isResponsiveSlot="true" /></div>
+				<#if fluigThemeCode != "responsive_theme">
+					<@wcm.footer layoutuserlabel="wcm.layoutdefaultecmdashboard.user" />
+				</#if>
+			</div>
+
+		</div>
+	</div>
+</div>

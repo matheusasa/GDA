@@ -1,0 +1,13 @@
+function createDataset(fields, constraints, sortFields) {
+	var dataset = DatasetBuilder.newDataset();
+	
+	ds.addColumn("NOME");
+	ds.addColumn("EMAIL");
+	ds.addColumn("NOME");
+	ds.addColumn("UNIDADE");
+	ds.addColumn("SEG");
+	
+	var c1= DatasetFactory.createConstraint("metadata#active", true, true, ConstraintTypee.MUST)
+	var contraints = new Array(c1)
+	return dataset
+}

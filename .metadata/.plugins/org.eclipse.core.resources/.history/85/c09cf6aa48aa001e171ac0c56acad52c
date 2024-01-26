@@ -1,0 +1,368 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+    <div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide"
+        data-params="MyWidget.instance()">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <style>
+        html {
+            --main-color: #2F5597;
+            --second-bg-color: #323946;
+            --white: #fff;
+            font-size: 14px;
+            font-family: "Andale Mono"
+        }
+
+        .panel-heading {
+            font-size: 150%;
+        }
+
+        h11 {
+            color: red;
+        }
+
+        .btnn {
+            background: var(--main-color);
+            border-radius: 4rem;
+            box-shadow: 0 0 1rem var(--main-color);
+            font-size: 12px;
+            color: var(--white);
+            letter-spacing: .1rem;
+            font-weight: 600;
+            transition: .5s ease;
+        }
+
+        .botao-enviar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 2rem;
+        }
+
+        .brief {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btnn:hover {
+            box-shadow: none;
+        }
+
+        form .btnn {
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgb(238, 23, 91);
+            background: linear-gradient(90deg, rgba(238, 23, 91, 1) 31%, rgba(255, 157, 0, 1) 100%);
+        }
+
+        .container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container header {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .container .form {
+            margin-top: 30px;
+        }
+
+        .form .input-box {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .input-box label {
+            color: #333;
+        }
+
+        .form :where(.input-box input, .select-box) {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
+            border-radius: 6px;
+            padding: 0 0;
+        }
+
+        .input-box input:focus {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .form .column {
+            display: flex;
+            column-gap: 15px;
+        }
+
+        .form .mod-box {
+            margin-top: 20px;
+        }
+
+        .mod-box h3 {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .form :where(.mod-option, .mod) {
+            display: flex;
+            align-items: center;
+            column-gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .form .mod {
+            column-gap: 5px;
+        }
+
+        .mod input {
+            accent-color: #FB0058;
+        }
+
+        .form :where(.mod input, .mod label) {
+            cursor: pointer;
+        }
+
+        .mod label {
+            color: #707070;
+        }
+
+        .select-box select {
+            outline: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .form button {
+            height: 55px;
+            width: 100%;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #FB0058;
+        }
+
+        .form button:hover {
+            background: #D5004B;
+        }
+
+        /*Responsive*/
+        @media screen and (max-width: 500px) {
+            .form .column {
+                flex-wrap: wrap;
+            }
+
+            .form :where(.mod-option, .mod) {
+                row-gap: 15px;
+            }
+        }
+
+        .cadastro,
+        .clienteProspect {
+            display: flex;
+            box-sizing: border-box;
+        }
+
+        .clienteProspect {
+            margin: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cadastro {
+            margin-top: 300px;
+        }
+
+        .botao {
+            width: 20px;
+            height: 20px;
+        }
+
+        .agoravaimano {
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lupa:hover {
+            background: #D5004B;
+        }
+        </style>
+
+        <body>
+            <form role="form">
+                <section class="container cadastro">
+                    <img src="/resources/images/logo.png" alt="Logo Totvs" style="height: 32px; width: 150px;">
+                    <header>Solicitante</header>
+                    <div class="form">
+                        <div class="row">
+                            <div class="select-box col-md-3">
+                                <label><i class="fluigicon fluigicon-company icon-sm" aria-hidden="true"></i></i>
+                                    Unidade</label>
+                                <select required="" id="unidade" name="unidade" class="form-control">
+                                    <option hidden value="">Unidade</option>
+                                    <option value="TSM" required="" id="tsm" name="tsm">TSM</option>
+                                    <option value="TVALE" required="" id="tvale" name="tvale">TVALE</option>
+                                    <option value="TSUL" required="" id="tsul" name="tsul">TSUL</option>
+                                </select>
+                            </div>
+                            <div class="select-box col-md-4">
+                                <label><i class="flaticon flaticon-align-left icon-sm" aria-hidden="true"></i>
+                                    Segmento</label>
+                                <select required="" id="segmento" name="segmento" class="form-control">
+                                    <option hidden value="">Selecione seu Segmento</option>
+                                    <option value="Agro" required>Agro</option>
+                                    <option value="Construção" required>Construção</option>
+                                    <option value="Distribuição" required>Distribuição</option>
+                                    <option value="Educacional" required>Educacional</option>
+                                    <option value="Logística" required>Logística</option>
+                                    <option value="Manufatura" required>Manufatura</option>
+                                    <option value="Serviços" required>Serviços</option>
+                                    <option value="Varejo" required>Varejo</option>
+                                </select>
+                            </div>
+                            <div class="agoravaimano col-lg-1">
+                                <button class="btn btn-primary lupa" type="button" onClick="BuscaInfo()" onClick="table()"><i class="flaticon flaticon-search icon-sm" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="divLoading" class="col-xs-12 col-sm-12 col-md-12">
+                                <table id="tablesconder" name="tablesconder" class="table table-striped table-bordered table-responsive">
+                                    <thead>
+                                        <tr class="info">
+                                            <td><b><i class="flaticon flaticon-add-branch icon-xl" aria-hidden="true"></i>
+                                                </b></td>
+                                            <td><b>Nome</b></td>
+                                            <td><b>Email</b></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbDadosMIT"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="mod-box">
+                                <label style="font-weight: bold;">
+                                    Modalidade</label>
+                                <div class="mod-option">
+                                    <div class="mod">
+                                        <input type="radio" id="mod" name="mod" required value="Presencial" />
+                                        <label for="presencial" style="pointer-events: none; ">Presencial</label>
+                                    </div>
+                                    <div class="mod">
+                                        <input type="radio" id="mod" name="mod" required value="Online" />
+                                        <label for="online" style="pointer-events: none;">Online</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-card-user icon-sm" aria-hidden="true"></i> Nome</label>
+                                <input type="text" placeholder="Preenchimento Automatico" required id="nome" name="nome" readonly />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-email icon-sm" aria-hidden="true"></i>
+                                    E-mail</label>
+                                <input type="text" placeholder="Preenchimento Automatico" required id="email" name="email" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="container clienteProspect">
+                    <header>Cliente/Prospect</header>
+                    <div class="form">
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-email icon-sm" aria-hidden="true"></i> Email: </label>
+                                <input type="text" placeholder="Seu nome aqui" id="emailClient" name="emailClient" placeholder="email@email.com"
+                                    type="text" pattern="[a-z0-9._%+-]
++@[a-z0-9.-]
++\.[a-z]
+{2,4}$" required="" />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="fluigicon fluigicon-search-test icon-sm" aria-hidden="true"></i> CNPJ: </label>
+                                <input id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required=""
+                                    type="text" maxlength="18" pattern="\[0-9]
+{2}\ [0-9]
+{4,6}-[0-9]
+{3,4}$"
+                                    OnKeyPress="formatar('##.###.###/####-##', this)" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="fluigicon fluigicon-group-school-note icon-sm" aria-hidden="true"></i> Cargo: </label>
+                                <input id="cargo" name="cargo" placeholder="Ex: Executivo" type="text"
+                                    required />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-contact-phone icon-sm" aria-hidden="true"></i> WhatsApp: </label>
+                                <input id="wpp" name="wpp" placeholder="XX XXXXX-XXXX" required=""
+                                    type="text" maxlength="13" pattern="\[0-9]
+{2}\ [0-9]
+{4,6}-[0-9]
+{3,4}$"
+                                    OnKeyPress="formatar('## #####-####', this)" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-assignment-ind icon-sm" aria-hidden="true"></i> Razão Social: </label>
+                                <input id="razao" name="razao" type="text" required="" placeholder="Ex: Totvs" />
+                            </div>
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-supervisor-account icon-sm" aria-hidden="true"></i> Pessoa de Contato:</label>
+                                <input id="contato" name="contato" type="text" required="" placeholder="Ex: Dennis" />
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label><i class="flaticon flaticon-assignment icon-sm" aria-hidden="true"></i> Briefing</label>
+                                <textarea class="form-control no-resize" name="briefing" id="briefing" rows="8" maxlength="4000"
+                                    required=""></textarea>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="btCria" name="btCria" onClick="criaRegistro()">Enviar</button>
+                    </div>
+                </section>
+                <script>
+                $("#tablesconder").hide();
+
+                function formatar(mascara, documento) {
+                    var i = documento.value.length;
+                    var saida = mascara.substring(0, 1);
+                    var texto = mascara.substring(i);
+                    if (texto.substring(0, 1) != saida) {
+                        documento.value += texto.substring(0, 1);
+                    }
+                }
+                </script>
+            </form>
+        </body>
+    </div>

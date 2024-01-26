@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//wcm/layout/Hello_World/src/main/resources/Hello_World.properties=utf8
+encoding//wcm/layout/Hello_World/src/main/resources/Hello_World_en_US.properties=utf8
+encoding//wcm/layout/Hello_World/src/main/resources/Hello_World_es.properties=utf8
+encoding//wcm/layout/Hello_World/src/main/resources/Hello_World_pt_BR.properties=utf8
+encoding//wcm/layout/Hello_World/src/main/resources/application.info=utf8
+encoding//wcm/layout/Hello_World/src/main/resources/layout.ftl=utf8
+encoding//wcm/layout/Hello_World/src/main/webapp/WEB-INF/jboss-web.xml=utf8
+encoding//wcm/layout/Hello_World/src/main/webapp/resources/css/Hello_World.css=utf8
+encoding//wcm/layout/Hello_World/src/main/webapp/resources/images/icon.png=utf8
+encoding//wcm/layout/Hello_World/src/main/webapp/resources/js/Hello_World.js=utf8

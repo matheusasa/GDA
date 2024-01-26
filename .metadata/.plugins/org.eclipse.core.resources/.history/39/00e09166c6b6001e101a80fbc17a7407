@@ -1,0 +1,140 @@
+<div id="MyWidget_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="MyWidget.instance()">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href="custom.css" rel="stylesheet" id="custom-css">
+	<script src="custom.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<style>
+
+	* {
+		outline: none;
+		box-sizing: border-box;
+		margin: 0;
+		outline: 0;
+	}
+
+	.panel-heading {
+		font-size: 150%;
+	}
+
+	body {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		background: rgb(238, 23, 91);
+		overflow-x: hidden;
+		/* Hide horizontal scrollbar */
+	}
+
+	.container {
+		position: relative;
+		max-width: 1000px;
+		width: 100%;
+		background: #fff;
+		padding: 25px;
+		border-radius: 8px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	}
+
+	.container header {
+		font-size: 1.5rem;
+		color: #333;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	.container .form {
+		margin-top: 30px;
+	}
+
+	</style>
+
+	<body>
+		<div class="fluig-style-guide">
+			<form role="form" id="formulario">
+				<section class="container cadastro">
+					<img src="/resources/images/logo.png" alt="Logo Totvs" style="height: 32px; width: 150px; position:absolute;left:20px">
+					<header style="position:relative;">Anfitrião Totvs</header>
+					<div class="form">
+						<div class="column">
+							<div class="input-box">
+								<label><i class="fluigicon fluigicon-company icon-sm" aria-hidden="true"></i></i>
+									Status do Evento</label>
+								<div class="column">
+									<div class="col-lg-3">
+										<div class="select-box">
+											<select required="" id="status" name="status" class="form-control"
+												style="height: 100%;" onchange="trocafunc()">
+												<option hidden value="">Selecione o ocorrido</option>
+												<option value="realizado" required="" id="realizado" name="realizado">Realizado</option>
+												<option value="faltaC" required="" id="faltaC" name="faltaC">Falta de Convidado</option>
+												<option value="faltaA" required="" id="faltaA" name="faltaA">Falta do Anfitrião</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="column" style="display: none" id="FC">
+								<div class="input-box">
+									<label><i class="flaticon flaticon-assignment-ind icon-sm" aria-hidden="true"></i> Por qual motivo? </label>
+									<div class="input-box" style= "width: 420px"><input id="razao" name="razao" type="text" required=""  style="width: 100%"/></div>
+								</div>
+								<div class="mod-box">
+									<label style="font-weight: bold;"><i class="flaticon flaticon-group-config icon-sm" aria-hidden="true"></i>
+										Deseja Remarcar?</label>
+									<div class="mod-option">
+										<div class="mod">
+											<input type="radio" id="mod" name="mod" required value="presencial" />
+											<label for="presencial" style="pointer-events: none; ">Sim</label>
+										</div>
+										<div class="mod">
+											<input type="radio" id="mod" name="mod" required value="online" />
+											<label for="online" style="pointer-events: none;">Não</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						<div class="row ">
+							<label style="font-weight: bold;"><i class="flaticon flaticon-group-config icon-sm" aria-hidden="true"></i> Nota de Interesse: Cliente/Prospect</label>
+						</div>
+						<div class="row col-md-2 col-lg-2">
+							<select required="" id="notaint" name="notaint" class="form-control">
+									<option hidden value="">Selecione a nota</option>
+									<option value='1'>1★</option>
+									<option value='2'>2★</option>
+									<option value='3'>3★</option>
+									<option value='4'>4★</option>
+									<option value='5'>5★</option>
+							</select>
+						</div><br>
+						<div class="row column">
+							<label style="font-weight: bold;"><i class="flaticon flaticon-group-config icon-sm" aria-hidden="true"></i> Nota do perfil do Cliente/Prospect para aderir TOTVS</label>
+						</div>
+						<div class="row column col-md-2 col-lg-2">
+							<select required="" id="notaclient" name="notaclient" class="form-control">
+									<option hidden value="">Selecione a nota</option>
+									<option value='1'>1★</option>
+									<option value='2'>2★</option>
+									<option value='3'>3★</option>
+									<option value='4'>4★</option>
+									<option value='5'>5★</option>
+							</select>
+							</div>
+						<div class="column">
+							<div class="input-box">
+								<label><i class="flaticon flaticon-assignment icon-sm" aria-hidden="true"></i> Comentários</label>
+								<textarea class="form-control no-resize" name="briefing" id="briefing" rows="8" maxlength="4000"
+									required=""></textarea>
+							</div>
+						</div>
+					</div>
+				</section>
+			</form>
+		</div>
+	</body>
+</div>
+</div>

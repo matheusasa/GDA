@@ -1,0 +1,66 @@
+var MyWidget = SuperWidget.extend({
+
+    //método iniciado quando a widget é carregada
+    init: function () {
+    },
+
+    //BIND de eventos
+    bindings: {
+        local: {
+            'create': ['click-criar']
+        },
+        global: {}
+    },
+    criar: function () {
+        $.ajax({
+            url: '/APN/resources/js/xml/ECMWorkflowEngineService_simpleStartProcess.xml',
+            async: false,
+            type: "GET",
+            dataType: "xml",
+            success: function (xml) {
+                _xml = $(xml)
+            }
+        });
+
+        _xml.find("companyID").text(WCMAPI.tenantCode);
+        _xml.find("username").text("matheus");
+        _xml.find("password").text("matheus");
+        _xml.find("processId").text("agenda");
+        _xml.find("[name=nome]").text($("#nome").val());
+        _xml.find("[name=email]").text($("#email").val());
+        _xml.find("[name=unidade]").text($("#segmentos").val());
+        _xml.find("[name=modalidade]").text($("#modalidade").val());
+        _xml.find("[name=segmento]").text($("#segmentosL2").val());
+        _xml.find("[name=emailcliente]").text($("#emailClient").val());
+        _xml.find("[name=cnpj]").text($("#cnpj").val());
+        _xml.find("[name=cargo]").text($("#cargo").val());
+        _xml.find("[name=wpp]").text($("#wpp").val());
+        _xml.find("[name=razao]").text($("#razao").val());
+        _xml.find("[name=contato]").text($("#contato").val());
+        _xml.find("[name=briefing]").text($("#briefing").val());
+
+        WCMAPI.Create({
+            url: "/webdesk/ECMWorkflowEngineService?wsdl",
+            contentType: "text/xml",
+            dataType: "xml",
+            data: _xml[0],
+            success: function (data) {
+                FLUIGC.toast({
+                    title: 'Processo Iniciado!',
+                    message: 'Continue o processo',
+                    type: 'sucess'
+                });
+            }
+        });
+
+
+
+
+
+
+
+
+    }
+
+});
+

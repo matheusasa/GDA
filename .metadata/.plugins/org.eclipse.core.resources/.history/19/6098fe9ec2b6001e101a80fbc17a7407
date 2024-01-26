@@ -1,0 +1,54 @@
+var MyWidget = SuperWidget.extend({
+    //variáveis da widget
+    variavelNumerica: null,
+    variavelCaracter: null,
+
+    //método iniciado quando a widget é carregada
+    init: function() {
+    },
+  
+    //BIND de eventos
+    bindings: {
+        local: {
+            'execute': ['click_executeAction']
+        },
+        global: {}
+    },
+ 
+    executeAction: function(htmlElement, event) {
+    }
+
+});
+
+
+function trocafunc(){
+    var evento = document.getElementById('status').value;
+    var faltaConvidado = document.getElementById('FC');
+    if(evento == "faltaC" || "faltaA" ) {
+        faltaConvidado.style.display = "block";
+    }
+}
+
+function editareg(){
+    var status;
+    var mod;
+    var comentarios;
+
+
+}
+
+var ratedValue = 0;
+
+function rate(value) {
+ratedValue = value;
+
+// Atualiza as classes das estrelas
+for (var i = 1; i <= 5; i++) {
+    const star = document.querySelector(.star:nth-child(${i}));
+    star.classList.remove('active');
+
+    if (i <= ratedValue) {
+    star.classList.add('active');
+    }
+}
+}

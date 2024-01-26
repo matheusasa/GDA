@@ -1,0 +1,137 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+
+<!--informando o de "controle de agendamento"-->
+<div class="fluig-style-guide">
+	<form name="form" role="form">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h2 class="panel-title"><i class="fluigicon fluigicon-calendar-top-right icon-md" aria-hidden="true"></i>						Controle de Agendamento
+				</h2>
+			</div>
+			
+			<!--recebendo o input de nome-->
+			<div class="panel-body">
+				<div class="row">
+				
+			    <div class="col-md-4">
+		          <div class="card">
+		            <div class="card-body">
+		              <h3 class="card-title">Validação de Calendar</h3>
+		              <h6 class="card-subtitle mb-2 text-muted">Solicitante</h6>
+		              <p class="card-text"> Acesse abaixo a sua agenda no Calendar
+		              </p>
+		              <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" class="card-link">Calendar</a>
+		              
+		            </div>
+		          </div>
+		        </div>
+            				 
+		        
+                    <div class="form-group col-md-4">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" class="form-control">
+                    </div>
+                    
+                    <!--recebendo o input do email-->
+                    <div class="form-group col-md-4">
+                        <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    
+                    <!--escolhendo o segmento pelo select-->
+					<div class="form-group col-md-4">
+						<label>Unidade:</label>
+						<input name="segmentos" id="segmentos" class="form-control">	
+					</div>
+					
+					
+					<div class="form-group col-md-4">
+					<label>Modalidade:</label>
+					<input name="modalidade" id="modalidade" class="form-control">	
+				</div>
+				
+				<!--escolhendo o segmento pelo select-->
+                                   <div class="form-group col-md-12">
+						<label>Segmentos:</label>
+						<input name="segmentosL2" id="segmentosL2" class="form-control">
+						</input>
+					</div>
+                </div>
+                
+            
+			</div>			
+		</div>
+		
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title"><i class="flaticon flaticon-group-person icon-md" aria-hidden="true"></i>Cliente/Prospect</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+			
+			
+			  <div class="form-group col-md-3">
+      		<label for="emailClient">E-mail:</label>
+      		<input type="email" name="emailClient" id="emailClient" class="form-control" required placeholder="email@example.com">
+      		</div>
+      		
+             
+          
+          <div class="form-group col-md-3">
+          <label for="CNPJ">CNPJ:</label>
+          <input type="text" name="cnpj" id="cnpj" class="form-control" required placeholder="XX. XXX. XXX/0001-XX.">
+      </div>
+      
+        
+		        <div class="form-group col-md-3">
+		        <label for="cargo">Cargo:</label>
+		        <input type="text" name="cargo" id="cargo" class="form-control" required placeholder="Ex: Executivo.">
+		    </div>	
+		    
+		    <div class="form-group col-md-3">
+		    <label for="wpp">Número de WhatsApp:</label>
+		    <input type="tel" name="wpp" id="wpp" class="form-control" required placeholder="(XX) XXXXX-XXXX.">
+		</div>
+		
+		 <div class="form-group col-md-6">
+       <label for="razao">Razao Social:</label>
+       <input type="text" name="razao" id="razao" class="form-control" placeholder="Ex: Totvs Serra do Mar.">
+   </div>	
+		
+   <div class="form-group col-md-6">
+   <label for="contato">Pessoa de Contato:</label>
+   <input type="text" name="contato" id="contato" class="form-control">
+</div>      	
+
+				</div>
+				<div class="form-group">
+				<label>Briefing:</label>
+				<textarea class="form-control no-resize" name="briefing" id="brinfing" rows="8"
+					maxlength="4000"></textarea>
+			</div>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+	
+	
+	</form>
+	
+</div>
+
+               
+</body>
+
+</html>

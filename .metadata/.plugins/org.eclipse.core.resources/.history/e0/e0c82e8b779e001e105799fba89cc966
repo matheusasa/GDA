@@ -1,0 +1,9 @@
+<#import "/wcm.ftl" as wcm />
+
+
+
+
+
+
+                    <@wcm.renderSlot id="SlotA" editableSlot="false" decorator="false" isResponsiveSlot="true" />
+

@@ -1,0 +1,37 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.dm.ecm.technology.totvs.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ws:updateCardData>
+            <companyId></companyId>
+            <username></username>
+            <password></password>
+            <cardId></cardId>
+            <cardData>
+                <item>
+                    <field>statusevento</field>
+                    <value name="statusevento"></value>
+                </item>
+                <item>
+                    <field>nota1solicit</field>
+                    <value name="nota1solicit"></value>
+                </item>
+                <item>
+                    <field>nota2solicit</field>
+                    <value name="nota2solicit"></value>
+                </item>
+                <item>
+                    <field>comentsolicit</field>
+                    <value name="comentsolicit"></value>
+                </item>
+                <item>
+                    <field>motivo</field>
+                    <value name="motivo"></value>
+                </item>
+                <item>
+                    <field>remarcar</field>
+                    <value name="remarcar"></value>
+                </item>
+            </cardData>
+        </ws:updateCardData>
+    </soapenv:Body>
+</soapenv:Envelope>

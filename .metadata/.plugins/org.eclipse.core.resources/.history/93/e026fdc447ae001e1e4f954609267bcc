@@ -1,0 +1,69 @@
+function createDataset(fields, constraints, sortFields) {
+    var ds = DatasetBuilder.newDataset();
+    //Adicionar coluna
+    ds.addColumn("ARQ");
+    ds.addColumn("E-mail");
+    ds.addColumn("Categoria do Sistema");
+    ds.addColumn("Sub Categoria");
+    var cat;
+    var subcat;
+    
+    
+    if (constraints != null && constraints.length > 0) {
+		for (var i = 0; i < constraints.length; i++) {
+			if (constraints[i].fieldName == 'Categoria do Sistema') {
+				var filtroForm1 = constraints[i].initialValue;
+				cat = DatasetFactory.createConstraint("Categoria do Sistema", filtroForm1, filtroForm1, ConstraintType.MUST);
+			}
+			if (constraints[i].fieldName == 'Sub Categoria') {
+				var filtroForm2 = constraints[i].initialValue;
+				subcat = DatasetFactory.createConstraint("Sub Categoria", filtroForm2, filtroForm2, ConstraintType.MUST);
+		}
+	}}
+    
+    //Filtrando dados ativos
+    var c1 = DatasetFactory.createConstraint("metadata#active", true, true, ConstraintType.MUST)
+    var contraints = new Array(c1)
+    //Armazendando dataset
+    var dsInterno = "dsDADOSARQ";
+    //Refazendo dataset apenas com dados ativos
+    var datasetformulario = DatasetFactory.getDataset(dsInterno, null, constraints, null);
+    var count = datasetformulario.rowsCount;
+    //Criando filtros para a tabela
+    for (var i = 0; i < count; i++) {
+        var docID = datasetformulario.getValue(i, "metadata#id");
+        var docVersion = datasetformulario.getValue(i, "metadata#version");
+        //Armazenando nome da variavel tablename
+        var table = "tablearq";
+        var co1 = DatasetFactory.createConstraint("tablename", table, table, ConstraintType.MUST);
+        var co2 = DatasetFactory.createConstraint("metadata#id", docID, docID, ConstraintType.MUST);
+        var co3 = DatasetFactory.createConstraint("metadata#version", docVersion, docVersion, ConstraintType.MUST);
+        var filtrosTab;
+        
+        if (constraints != null && constraints.length > 0  || cat != null) {
+			filtrosTab = new Array(co1, co2, co3, cat);
+		} else if(constraints != null && constraints.length > 1  || cat != null){
+			filtrosTab = new Array(co1,co2,co3,cat,subcat);
+		}else{
+			filtrosTab = new Array(co1,co2,co3);
+		}
+        //Refazendo dataset com os valores da table e com os filtros de table
+        var datasetable = DatasetFactory.getDataset(dsInterno, null, filtrosTab, null);
+        var counttable = datasetable.rowsCount;
+        //Adicionando as linhas de dados no novo dataset
+        for (var j = 0; j < counttable; j++) {
+            ds.addRow(
+                new Array(
+
+                    datasetable.getValue(j, "arq"),
+                    datasetable.getValue(j, "email"),
+                    datasetable.getValue(j, "ctgs"),
+                    datasetable.getValue(j, "sctgs")
+                )
+            )
+        }
+
+    }
+    //Devolvendo dados para tabela original
+    return ds;
+}
